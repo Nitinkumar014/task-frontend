@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
+import { AuthProvider, useAuth } from './Context/AuthContext';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import Dashboard from './Pages/Dashboard';
 
 // Protected Route component
 const ProtectedRoute = ({ children }) => {
