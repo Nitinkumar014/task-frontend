@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 
-
+const BASE_URL = "https://task-backend-2-4t93.onrender.com";
 const Board = () => {
 
   const [tasks, setTasks] = useState({
@@ -444,7 +444,7 @@ const deleteTask = async (column, id) => {
 
           <div className="grid md:grid-cols-3 gap-6">
 
-            {boards.map((board) => (
+            {Array.isArray(boards) && boards.map((board) => (
 
               <div
                 key={board._id}
@@ -492,6 +492,7 @@ const deleteTask = async (column, id) => {
           <div className="bg-white rounded-2xl shadow-xl p-8">
 
             <div className="flex items-center justify-between mb-8">
+
 
               <div className="flex items-center gap-4">
                 <button

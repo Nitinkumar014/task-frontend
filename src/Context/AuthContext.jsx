@@ -29,15 +29,16 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const fetchProfile = async () => {
-    try {
-      const res = await axios.get(`${API_URL}/profile`);
-      setUser(res.data);
-    } catch (error) {
-      logout();
-    } finally {
-      setLoading(false);
-    }
-  };
+  try {
+    const res = await axios.get(`${API_URL}/profile`);
+    setUser(res.data);
+  } catch (error) {
+    console.error(error);
+    setUser(null);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const login = async (email, password) => {
     try {
